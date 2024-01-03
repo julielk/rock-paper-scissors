@@ -8,10 +8,11 @@
 body {
     background-color: #f1f1f1;
     font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 
 
-/**
+/*
  h1 heading 
 */
 
@@ -25,32 +26,35 @@ h1 {
 
 }
 
-.btn{
+.btn {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 
 
 
-/**
+/*
  restart button
 */
-.restart-btn{
+.restart-btn {
 
-    display: inline-block; /* display later */
+    display: inline-block;
+    /* display later */
     background-color: cornflowerblue;
     padding: 0.4rem 1.3rem;
     border-radius: 5px;
     color: white;
     font-weight: 600;
     font-size: 1.5rem;
+    width: 200px;
+    height: 35px;
     cursor: pointer;
     outline: none;
     border: none;
     text-align: center;
-    
+
 }
 
 
@@ -61,7 +65,7 @@ h1 {
     color: black;
 }
 
-/**
+/*
   game area
 */
 
@@ -78,7 +82,7 @@ h1 {
 
 }
 
-/**
+/*
  control area
 */
 .control-area {
@@ -93,7 +97,7 @@ p {
     margin-bottom: .5rem;
 }
 
-/**
+/*
 buttons class center
 */
 .buttons {
@@ -101,7 +105,7 @@ buttons class center
     justify-content: center;
 }
 
-/**
+/*
  button tag rock paper scissors
 */
 
@@ -112,18 +116,21 @@ button {
     padding: 0.5rem;
     cursor: pointer;
     background-color;
-    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius:5px; /* decide if round later */
+
     transition: all .3s ease-in-out;
 }
 
-/**
+/*
  button hover
 */
 button:hover {
     opacity: 0.7;
 }
 
-/**
+/*
 background color rock
 */
 #rock {
@@ -131,14 +138,14 @@ background color rock
     background-color: orangered;
 }
 
-/**
+/*
 background color paper
 */
 #paper {
     background-color: yellow;
 }
 
-/**
+/*
 background color scissors
 */
 
@@ -151,16 +158,19 @@ background color scissors
     margin-top: 10px;
 }
 
-/**
+/*
 user score color
 */
-#user-score{
+#user-score {
     color: green;
 }
 
-/**
+/*
 computer score color
 */
-#computer-score{
+#computer-score {
     color: red;
 }
+
+/* change  color of text */
+
