@@ -1,96 +1,137 @@
-const buttons = document.querySelectorAll('button');
 
-const resultEl = document.getElementById('result');
+const game = () => {
 
-const playerScoreEl = document.getElementById('user-score');
+    let playerScore = 0;
+    let computerScore = 0; 
+    
 
-const computerScoreEl = document.getElementById('computer-score');
+   const playGame = () => {
 
-let playerScore = 0;
-let computerScore = 0;
+       
 
-/** Add eventlistener  plus function to the buttons
+    const buttons = document.querySelectorAll('button');
 
-player clicks on rock paper scissors
- forEach to target each button
-add eventlistener click triggers a function
-*/
+    const resultEl = document.getElementById('result');
 
-buttons.forEach((button) => {
+    const playerScoreEl = document.getElementById('user-score');
 
-    button.addEventListener("click", () => {
+    const computerScoreEl = document.getElementById('computer-score');
 
-        //console.log("user choice !", button.id, "computer choice", computerPlay());
+   
 
-        const result = playRound(button.id, computerPlay());
 
-        resultEl.textContent = result;
+    /**
+     * playerChoice
+     */
 
+
+
+
+
+
+    /** Add eventlistener  plus function to the buttons
+    
+    player clicks on rock paper scissors
+     using  a forEach to target each button
+    add eventlistener click triggers a function
+    */
+
+    buttons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            //console.log("user choice !", button.id, "computer choice", computerPlay());
+               const playerSelection = button.id;
+               
+             const result = playRound(playerSelection,computerChoice());
+               
+            resultEl.textContent = result;
+
+        });
 
 
     });
 
 
-});
 
 
+    /** computer choice function
+    array containing rock paper scissors
+     random number using Math.floor Math.radom, multiply by the length of array
+    return  number in choice array
+    */
+
+    function computerChoice() {
+
+        const arrayChoice = ['rock', 'paper', 'scissors'];
+
+        const randChoice = Math.floor(Math.random() * arrayChoice.length);
+
+        return arrayChoice[randChoice];
 
 
-/** computer play function
-array containing rock paper scissors
- random number using Math.floor Math.radom, multiply by the length of array
-return  number in choice array
-*/
+    }
 
-function computerPlay() {
 
-    const choices = ['rock', 'paper', 'scissors'];
+   
 
-    const randChoice = Math.floor(Math.random() * choices.length);
+    /**
+     * compare player selection with computer selection to find a winner
+     * pass two parameters player selection computer selection
+     */
 
-    return choices[randChoice];
+    function playRound(playerSelection, computerSelection) {
+
+
+        if (playerSelection ===computerSelection) {
+
+            return 'Tie';
+
+        }
+
+        else if ((playerSelection === "rock" && computerSelection === "scissors") ||
+
+            (playerSelection === "paper" &&
+                computerSelection === "rock") ||
+
+            (playerSelection === "scissors" && computerSelection === "paper")) {
+
+            playerScore++;
+            playerScoreEl.textContent = playerScore++;
+
+           
+            return `You Win! 
+            ${playerSelection} beats 
+              ${computerSelection}`;
+            
+                
+         
+
+            }
+
+            else {
+                computerScore++;
+                computerScoreEl.textContent = computerScore++;
+                
+                return `You Lose
+
+             ${computerSelection}  beats 
+              ${playerSelection}`;
+
+          
+            } 
+
+
+        }
+       
+      
+    } 
+       // calling play game function
+       playGame();
 
 
 }
 
-/**
- * compare player selection with computer selection
- * pass two parameters player selection computer selection
- */
+// calling game function
 
-function playRound(playerSelection, computerSelection) {
-
-    if (playerSelection == computerSelection) {
-
-        return "It's a Tie";
-    }
-
-    else if ((playerSelection === "rock" && computerSelection === "scissors") ||
-
-        (playerSelection === "paper" &&
-            computerSelection === "rock") ||
-
-        (playerSelection === "scissors" && computerSelection === "paper")) {
-
-        playerScore++;
-        playerScoreEl.textContent = playerScore++;
-        return `You Win! ${playerSelection} beats  ${computerSelection}`;
-
-    }
-
-    else {
-        computerScore++;
-        computerScoreEl.textContent = computerScore++;
-        return `You Lose!
-        ${computerSelection} beats 
-         ${playerSelection}`;
-
-    }
-
-
-}
-
-
-
-
-
+game();
