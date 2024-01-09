@@ -3,51 +3,49 @@ const game = () => {
 
     let playerScore = 0;
     let computerScore = 0;
-     let moves = 0;
- 
+    let moves = 0;
 
 
+
+    // Function  play game
     const playGame = () => {
+        const rockBtn = document.querySelector('.rock');
+        const paperBtn = document.querySelector('.paper');
+        const scissorBtn = document.querySelector('.scissor');
+        const playerOptions = [rockBtn, paperBtn, scissorBtn];
+        const computerOptions = ['rock', 'paper', 'scissors'];
 
 
 
-        // Function to 
-        const playGame = () => {
-            const rockBtn = document.querySelector('.rock');
-            const paperBtn = document.querySelector('.paper');
-            const scissorBtn = document.querySelector('.scissor');
-            const playerOptions = [rockBtn, paperBtn, scissorBtn];
-            const computerOptions = ['rock', 'paper', 'scissors']
+        // Function to start playing game
+        playerOptions.forEach(options => {
+            options.addEventListener('click', function () {
 
-            // Function to start playing game
-            playerOptions.forEach(option => {
-                option.addEventListener('click', function () {
-
-                    const movesLeft = document.querySelector('.movesleft');
-                    moves++;
-                    movesLeft.innerText = `Moves Left: ${10 - moves}`;
+                const movesLeft = document.querySelector('.movesleft');
+                moves++;
+                movesLeft.innerText = `Moves Left: ${10 - moves}`;
 
 
-                    const choiceNumber = Math.floor(Math.random() * 3);
-                    const computerChoice = computerOptions[choiceNumber];
+                const choiceNumber = Math.floor(Math.random() * 3);
+                const computerChoice = computerOptions[choiceNumber];
 
-                    // Function to check who wins
-                    winner(this.innerText, computerChoice)
+                // Function to check who wins
+                winner(this.innerText, computerChoice)
 
-                    // Calling gameOver function after 10 moves
-                    if (moves == 10) {
-                        gameOver(playerOptions, movesLeft);
-                    }
-                })
-      
-            })  
-        
-    
-         }
+                // Calling gameOver function after 10 moves
+                if (moves == 10) {
+                    gameOver(playerOptions, movesLeft);
+                }
+            })
 
-        
+        })
 
-         // Function to decide winner
+
+    }
+
+
+
+    // Function to decide winner
     const winner = (player, computer) => {
         const result = document.querySelector('.result');
         const playerScoreBoard = document.querySelector('.p-count');
@@ -62,7 +60,7 @@ const game = () => {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
- 
+
             } else {
                 result.textContent = 'Player Won'
                 playerScore++;
@@ -91,37 +89,25 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
 
+        }
+    }
 
 
-
-
-    
-                    
-    
-
-        
-    
-
-
-
-    
-    
-
-         // Function to run when game is over
+    // Function to run when game is over
     const gameOver = (playerOptions, movesLeft) => {
- 
+
         const chooseMove = document.querySelector('.move');
         const result = document.querySelector('.result');
         const reloadBtn = document.querySelector('.reload');
- 
-        playerOptions.forEach(option => {
-            option.style.display = 'none';
+
+        playerOptions.forEach(options => {
+            options.style.display = 'none';
         })
- 
- 
+
+
         chooseMove.innerText = 'Game Over!!'
         movesLeft.style.display = 'none';
- 
+
         if (playerScore > computerScore) {
             result.style.fontSize = '2rem';
             result.innerText = 'You Won The Game'
@@ -139,17 +125,17 @@ const game = () => {
         }
         reloadBtn.innerText = 'Restart';
         reloadBtn.style.display = 'flex'
-        reloadBtn.addEventListener('click', () => {
+        reloadBtn.addEventListen('click', () => {
             window.location.reload()
 
-   
-        }}
+
+        })
 
 
-        }
+    }
 
-    
-//calling play game function
+
+    //calling play game function
     playGame();
 
 
