@@ -3,209 +3,153 @@ const game = () => {
 
     let playerScore = 0;
     let computerScore = 0;
-    let moves =0;
+     let moves = 0;
+ 
 
 
     const playGame = () => {
 
 
 
-        const buttons = document.querySelectorAll('button');
+        // Function to 
+        const playGame = () => {
+            const rockBtn = document.querySelector('.rock');
+            const paperBtn = document.querySelector('.paper');
+            const scissorBtn = document.querySelector('.scissor');
+            const playerOptions = [rockBtn, paperBtn, scissorBtn];
+            const computerOptions = ['rock', 'paper', 'scissors']
 
-        const resultEl = document.getElementById('result');
+            // Function to start playing game
+            playerOptions.forEach(option => {
+                option.addEventListener('click', function () {
 
-        const playerScoreEl = document.getElementById('user-score');
+                    const movesLeft = document.querySelector('.movesleft');
+                    moves++;
+                    movesLeft.innerText = `Moves Left: ${10 - moves}`;
 
-        const computerScoreEl = document.getElementById('computer-score');
+
+                    const choiceNumber = Math.floor(Math.random() * 3);
+                    const computerChoice = computerOptions[choiceNumber];
+
+                    // Function to check who wins
+                    winner(this.innerText, computerChoice)
+
+                    // Calling gameOver function after 10 moves
+                    if (moves == 10) {
+                        gameOver(playerOptions, movesLeft);
+                    }
+                })
+      
+            })  
+        
+    
+         }
+
+        
+
+         // Function to decide winner
+    const winner = (player, computer) => {
+        const result = document.querySelector('.result');
+        const playerScoreBoard = document.querySelector('.p-count');
+        const computerScoreBoard = document.querySelector('.c-count');
+        player = player.toLowerCase();
+        computer = computer.toLowerCase();
+        if (player === computer) {
+            result.textContent = 'Tie'
+        }
+        else if (player == 'rock') {
+            if (computer == 'paper') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+ 
+            } else {
+                result.textContent = 'Player Won'
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player == 'scissors') {
+            if (computer == 'rock') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player == 'paper') {
+            if (computer == 'scissors') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+
 
 
 
 
     
+                    
+    
 
-
-
-        /** Add eventlistener  plus function to the buttons
         
-        player clicks on rock paper scissors
-         using  a forEach to target each button
-        add eventlistener click triggers a function
-        */
-
-        buttons.forEach((button) => {
-
-            button.addEventListener("click", () => {
-
-                
-                const playerChoice = button.id;
-
-     
-                const movesLeft = document.querySelector('.movesleft');
-                moves++;
-                movesLeft.innerText = `Moves Left: ${5 - moves}`;
-
-
-                const result = playRound(playerChoice, computerChoice());
-
-                resultEl.textContent = result;
-
-
-                // Function to check who wins
-                playRound(this.innerText, computerChoice)
-
-                // Calling gameOver function after 10 moves
-                if (moves === 5) {
-                    gameOver(playerChoice, movesLeft);
-                }
+    
 
 
 
-            });
+    
+    
 
-
-        });
-
-
-
-
-        /** computer choice function
-        array containing rock paper scissors
-         random number using Math.floor Math.radom, multiply by the length of array
-        return  number in choice array
-        */
-
-        function computerChoice() {
-
-            const arrayChoice = ['rock', 'paper', 'scissors'];
-
-            const randChoice = Math.floor(Math.random() * arrayChoice.length);
-
-            return arrayChoice[randChoice];
-
-
-        }
-
-
-
-
-        /** 
-         * compare player selection with   computer selection to find a winner
-         * pass two parameters player selection computer selection
-         */
-
-        function playRound(playerSelection, computerSelection) {
-
-
-            if (playerSelection === computerSelection) {
-
-                return 'Tie';
-
-            }
-
-            else if ((playerSelection === "rock" && computerSelection === "scissors") ||
-
-                (playerSelection === "paper" &&
-                    computerSelection === "rock") ||
-
-                (playerSelection === "scissors" && computerSelection === "paper")) {
-
-                playerScore++;
-                playerScoreEl.textContent = playerScore++;
-
-
-                return `You Win! 
-            ${playerSelection} beats 
-              ${computerSelection}`;
-
-
-
-
-            }
-
-            else {
-                computerScore++;
-                computerScoreEl.textContent = computerScore++;
-
-                return `You Lose
-
-             ${computerSelection}  beats 
-              ${playerSelection}`;
-
-
-            }
-
-
-        }
-
-
-    }
-
-    /**function to run when game's over
-     */
-    const gameOver = (playerChoice, movesLeft) => {
-
+         // Function to run when game is over
+    const gameOver = (playerOptions, movesLeft) => {
+ 
         const chooseMove = document.querySelector('.move');
-        const resultEl = document.querySelector('.result');
+        const result = document.querySelector('.result');
         const reloadBtn = document.querySelector('.reload');
-
-        playerChoice.forEach(button => {
-            button.style.display = 'none';
+ 
+        playerOptions.forEach(option => {
+            option.style.display = 'none';
         })
-
-
+ 
+ 
         chooseMove.innerText = 'Game Over!!'
         movesLeft.style.display = 'none';
-
-
-
-
-
+ 
         if (playerScore > computerScore) {
-
-            resultEl.style.fontSize = '2rem';
-            resultEl.innerText = 'You Won The Game'
-            resultEl.style.color = '#308D46';
-
+            result.style.fontSize = '2rem';
+            result.innerText = 'You Won The Game'
+            result.style.color = '#308D46';
         }
         else if (playerScore < computerScore) {
-
-            resultEl.style.fontSize = '2rem';
-            resultEl.innerText = 'You Lost The Game';
-            resultEl.style.color = 'red';
-
+            result.style.fontSize = '2rem';
+            result.innerText = 'You Lost The Game';
+            result.style.color = 'red';
         }
-
         else {
-
-            resultEl.style.fontSize = '2rem';
-            resultEl.innerText = 'Tie';
-            resultEl.style.color = 'grey'
-
+            result.style.fontSize = '2rem';
+            result.innerText = 'Tie';
+            result.style.color = 'grey'
         }
-
         reloadBtn.innerText = 'Restart';
         reloadBtn.style.display = 'flex'
         reloadBtn.addEventListener('click', () => {
-            window.location.reload();
-        })
+            window.location.reload()
+
+   
+        }}
 
 
-    } // end game over
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // calling play game function
+    
+//calling play game function
     playGame();
 
 

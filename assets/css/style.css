@@ -26,43 +26,27 @@ h1 {
 
 }
 
-.btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
 
 
 /*
- restart button
+ number of move
 */
-.restart-btn {
-
-    display: inline-block;
-    /* display later */
-    background-color: cornflowerblue;
-    padding: 0.4rem 1.3rem;
-    border-radius: 5px;
-    color: white;
+.move{
+    
+    color: black;
     font-weight: 600;
-    font-size: 1.5rem;
-    width: 200px;
-    height: 35px;
-    cursor: pointer;
-    outline: none;
-    border: none;
+    font-size: 2rem;
     text-align: center;
+    margin-bottom: 30px;
 
 }
 
 
-.restart-btn:hover {
+.movesleft{
+    font-size: 1.5rem;
+    text-align: center; 
+    margin-bottom: 10px; 
 
-    background-color: lightskyblue;
-
-    color: black;
 }
 
 /*
@@ -89,6 +73,7 @@ h1 {
 
     width: 85%;
     margin: 30px auto;
+    background-color: lightgrey;
 }
 
 p {
@@ -115,7 +100,7 @@ button {
     margin: 0 .5rem;
     padding: 0.5rem;
     cursor: pointer;
-    background-color;
+    background-color:lightskyblue;
     width: 100px;
     height: 100px;
     border-radius:5px; /* decide if round later */
@@ -155,7 +140,8 @@ background color scissors
 
 #result {
     font-size: 2rem;
-    margin-top: 10px;
+    margin-top: 20px;
+     
 }
 
 /*
@@ -172,5 +158,24 @@ computer score color
     color: red;
 }
 
-/* change  color of text */
 
+#gameOver{
+
+    display: none;
+    font-size: 2rem;
+    color: darkblue;
+}
+
+
+/* Reload button style */
+.reload {
+
+    margin-top: 2rem;
+    padding: 1rem;
+    background: darkcyan;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
