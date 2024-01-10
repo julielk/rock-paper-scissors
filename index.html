@@ -10,54 +10,71 @@
 </head>
 
 <body>
-    <header class="heading">
-        <h1>Rock Paper Scissors</h1>
-
-    </header>
+    >
 
 
 
-    <!--game-area-->
-    <div class="game-area">
+    <!--game-->
+    <section class="game">
 
-        <!--control-area-->
-        <div class="control-area">
-            <!--rock paper scissors buttons-->
+        <header class="heading">
+            <h1>Rock Paper Scissors</h1>
+        
+        </head>
 
+        <!--Display Score of player and computer-->
+        <div class="score">
+            <div class="playerScore">
+                <h2>Player</h2>
+                <p class="p-count count">0</p>
+        
+            </div>
+            <div class="computerScore">
+                <h2>Computer</h2>
+                <p class="c-count count">0</p>
+        
+            </div>
+        </div>
 
-            <div class="moves">Choose your move</div>
+        <div class="move">Choose your move
 
-            <!--Number of moves left before game ends -->
-            <div class="movesleft">Moves Left: 5 </div>
+        </div>
 
-
-
+        <!--Number of moves left before game ends -->
+        <div class="movesleft">Moves Left: 10 </div>
 
             <!--HTML entities-->
             <div class="options">
-                <button class="options" class="rock">&#x1f44A;</button>
+                <button class="btns" class="rock" id="rock">&#x1f44A;</button>
 
-                <button class="options" class="paper">&#x1f590;</button>
+                <button class="btns" class="paper" id="paper">&#x1f590;</button>
 
-                <button class=options" class="scissors">&#x270c;</button>
+                <button class="btns" class="scissors" id="scissors">&#x270c;</button>
             </div>
 
-            <!--display the result win lose or tie-->
+            <!--Display the result win lose or tie-->
             <p id="result"></p>
 
-        </div> <!--end of control area-->
+    
+        <!--Display Score of player and computer -->
+        <div class="score">
+            <div class="playerScore">
+                <h2>Player</h2>
+                <p class="p-count count">0</p>
+        
+            </div>
+            <div class="computerScore">
+                <h2>Computer</h2>
+                <p class="c-count count">0</p>
+        
+            </div>
+        </div>
 
-        <p id="score">
-            Player : <span id="user-score">0</span>
-
-            Computer : <span id="computer-score">0</span>
-
-        </p>
-
+    
         <!--Reload the game -->
         <button class="reload"></button>
 
-    </div> <!--end of game area-->
+    </section> <!--end of game section-
 
     <script src="assets/js/script.js"></script>
 </body>
