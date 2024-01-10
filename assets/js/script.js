@@ -10,23 +10,25 @@ const game = () => {
     // Function  play game
     const playGame = () => {
 
-   //const  options = document.querySelector('.options');
+        //const  options = document.querySelector('.options');
         const rockBtn = document.querySelector('.rock');
         const paperBtn = document.querySelector('.paper');
         const scissorBtn = document.querySelector('.scissor');
         const playerOptions = [rockBtn, paperBtn, scissorBtn];
         const computerOptions = ['rock', 'paper', 'scissors']
 
-        
+
 
         // Function to start playing game
 
-    
-          
+
+
         playerOptions.forEach(options => {
             options.addEventListener('click', function () {
 
                 const movesLeft = document.querySelector('.movesleft');
+
+
                 move++;
                 movesLeft.innerText = `Moves Left: ${5 - move}`;
 
@@ -45,7 +47,7 @@ const game = () => {
 
         })
 
-        
+
     }
 
 
@@ -57,17 +59,19 @@ const game = () => {
         const computerScoreBoard = document.querySelector('.c-count');
         player = player.toLowerCase();
         computer = computer.toLowerCase();
-        if (player == computer) {
+        if (player === computer) {
             result.textContent = 'Tie'
         }
         else if (player == 'rock') {
             if (computer == 'paper') {
                 result.textContent = 'Computer Won';
+
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
 
             } else {
                 result.textContent = 'Player Won'
+            
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
@@ -99,7 +103,7 @@ const game = () => {
 
 
     // Function to run when game is over
-    
+
     const gameOver = (playerOptions, movesLeft) => {
 
 
@@ -130,9 +134,12 @@ const game = () => {
             result.innerText = 'Tie';
             result.style.color = 'grey'
         }
+
         reloadBtn.innerText = 'Restart';
-        reloadBtn.style.display = 'flex'
-        reloadBtn.addEventListen('click',() => {
+        reloadBtn.style.display = 'flex';
+        reloadBtn.addEventListener('click', () => {
+
+            console.log(reloadBtn);
             window.location.reload()
 
 
