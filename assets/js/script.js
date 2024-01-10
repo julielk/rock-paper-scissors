@@ -3,27 +3,32 @@ const game = () => {
 
     let playerScore = 0;
     let computerScore = 0;
-    let moves = 0;
+    let move = 0;
 
 
 
     // Function  play game
     const playGame = () => {
+
+   //const  options = document.querySelector('.options');
         const rockBtn = document.querySelector('.rock');
         const paperBtn = document.querySelector('.paper');
         const scissorBtn = document.querySelector('.scissor');
         const playerOptions = [rockBtn, paperBtn, scissorBtn];
-        const computerOptions = ['rock', 'paper', 'scissors'];
+        const computerOptions = ['rock', 'paper', 'scissors']
 
-
+        
 
         // Function to start playing game
+
+    
+          
         playerOptions.forEach(options => {
             options.addEventListener('click', function () {
 
                 const movesLeft = document.querySelector('.movesleft');
-                moves++;
-                movesLeft.innerText = `Moves Left: ${10 - moves}`;
+                move++;
+                movesLeft.innerText = `Moves Left: ${5 - move}`;
 
 
                 const choiceNumber = Math.floor(Math.random() * 3);
@@ -32,15 +37,15 @@ const game = () => {
                 // Function to check who wins
                 winner(this.innerText, computerChoice)
 
-                // Calling gameOver function after 10 moves
-                if (moves == 10) {
+                // Calling gameOver function after 5 moves
+                if (move == 5) {
                     gameOver(playerOptions, movesLeft);
                 }
             })
 
         })
 
-
+        
     }
 
 
@@ -52,7 +57,7 @@ const game = () => {
         const computerScoreBoard = document.querySelector('.c-count');
         player = player.toLowerCase();
         computer = computer.toLowerCase();
-        if (player === computer) {
+        if (player == computer) {
             result.textContent = 'Tie'
         }
         else if (player == 'rock') {
@@ -94,7 +99,9 @@ const game = () => {
 
 
     // Function to run when game is over
+    
     const gameOver = (playerOptions, movesLeft) => {
+
 
         const chooseMove = document.querySelector('.move');
         const result = document.querySelector('.result');
@@ -125,7 +132,7 @@ const game = () => {
         }
         reloadBtn.innerText = 'Restart';
         reloadBtn.style.display = 'flex'
-        reloadBtn.addEventListen('click', () => {
+        reloadBtn.addEventListen('click',() => {
             window.location.reload()
 
 
