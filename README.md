@@ -23,36 +23,46 @@ rock, paper or scissors.
   the game.
 
 
-#Features
+**Features**
+1. The main objects of the game  three buttons : left - rock, middle - paper, right - scissor
+2.  player choice vs. computer's choices.
+3. The outputs represented by: a text calling the winner, a text representing 
+   competitors choices, a text that numbers the winns, losses and ties throughout the game.
+4. Two features which add a bit of complexity to the game. The player **click** on a **addEventListener** choose rock paper or scissors. The computer choice is  randomly chosen by the 
+ **computer** Math random number function to return whole number use Math.floor.
+5. Then compared player choce with computer to fine the winner Tie
+6. Theh  game runs five time.
+7. When the **Game Over**  press **restart** button which restart  game socre reverts to zero.
+   
 
 
-#Testing
+
+**Testing**
 * I tested the game in  different browers chrome firefox and chrome
-* I confroe the the game is responsive on all standard devices using DevTools device toolbar
+* I confirm the the game is responsive on all standard devices using DevTools device toolbar
 
-#Bugs
+**Bugs**
+ Bug  I removed HTML entities and replacec with text in the buttons inorder for the if else statement to work
 
 
-#Validation Testing
+**Validation Testing**
 * HTML - No errors returned passsing  the offical W3c Validatoer.
-* CSS  - No erroe returned passinf the  offical W3c Validator.
-* JS    -
+* CSS  - No erroe returned passing the  offical W3c Validator.
+* JS    -No error retured using the debugging DevToool device.
 
-#Unfixed Bugs
+**Unfixed Bugs**
 No unfixed bugs
 
-#Deployent
+**Deployent**
 * The site was deployed to Github pages. The steps as follows:
    * In the github repository navigate to the setting tab.
    * From the source section drop down menu select the main branch
    * Once the main branch has been selected  the page provides the link to the website
-     The live link is here : 
+     [The live link is here ](https://julielk.github.io/rock-paper-scissors/) 
 
-#Content
+**Content**
 
-
-#media
-
+**media**
 
 
 
