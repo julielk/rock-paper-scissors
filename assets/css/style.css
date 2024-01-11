@@ -1,11 +1,11 @@
 * {
     padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-        background: whitesmoke;
-        color: black;
-    
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background: whitesmoke;
+    color: black;
+
 }
 
 
@@ -22,23 +22,25 @@
 
 
 /* title*/
-.title{
+.title {
     position: absolute;
     margin-bottom: 20px;
-     top: 0;
-     font-size: 4rem;
-     z-index: 2;
+    top: 0;
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    z-index: 2;
 
 }
 
 /* score board */
-.score{
-display: flex;
- width: 30vw;
- justify-content: space-evenly;
- position: absolute;
- top: 70px;
- z-index: 1;
+.score {
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 70px;
+    z-index: 1;
 
 }
 
@@ -50,12 +52,16 @@ display: flex;
     font-size: 2rem;
     margin-top: 1rem;
 }
-.p-count{
+
+/*color of player score */
+.p-count {
     color: red;
     font-weight: bold;
 }
-.c-count{
-    color:darkblue;
+
+/* color of computer score */
+.c-count {
+    color: darkblue;
     font-weight: bold;
 }
 
@@ -76,26 +82,28 @@ display: flex;
     width: 100px;
     border-radius: 10px;
     background: lightslategray;
-    color:white;
+    color: white;
     font-weight: bold;
     outline: none;
-    border-color:lightslategray;
+    border-color: lightslategray;
     border: none;
     cursor: pointer;
 }
 
 
- /*number of move */
-.move{
-  font-size: 2rem;
-   font-weight: bold;
+/*number of move */
+.move {
+    font-size: 2rem;
+    font-weight: bold;
 
 
 }
-.movesleft{
-     font-size: 1.5rem; 
-     margin-top: 10px;
-     font-weight: bold;
+
+/* number of moves left text */
+.movesleft {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 
@@ -112,18 +120,47 @@ display: flex;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    
+
 }
 
 /* result */
 .result {
     margin-top: 20px;
-     font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 
 
 /* Responsive Design */
+
+@media screen and (max-width:414) {
+    .title {
+        font-size: .5rem;
+    }
+
+    .score {
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+
+    .p-count,
+    .c-count {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .rock,
+    .paper,
+    .scissor {
+        display: grid;
+        grid-template-rows: 1fr;
+    }
+
+}
+
+
+
 @media screen and (max-width: 612px) {
     .title {
         text-align: center;
