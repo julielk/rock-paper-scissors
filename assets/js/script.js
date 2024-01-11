@@ -10,7 +10,7 @@ const game = () => {
     // Function  play game
     const playGame = () => {
 
-        //const  options = document.querySelector('.options');
+
         const rockBtn = document.querySelector('.rock');
         const paperBtn = document.querySelector('.paper');
         const scissorBtn = document.querySelector('.scissor');
@@ -26,22 +26,22 @@ const game = () => {
         playerOptions.forEach(options => {
             options.addEventListener('click', function () {
 
-                const movesLeft = document.querySelector('.movesleft');
+                const roundLeft = document.querySelector('.roundleft');
 
 
                 move++;
-                movesLeft.innerText = `Moves Left: ${5 - move}`;
+                roundLeft.innerText = `Round: ${5 - move}`;
 
 
-                const choiceNumber = Math.floor(Math.random() * 3);
+                const choiceNumber = Math.floor(Math.random() * computerOptions.length);
                 const computerChoice = computerOptions[choiceNumber];
 
                 // Function to check who wins
-                winner(this.innerText, computerChoice)
+               getWinner(this.innerText, computerChoice)
 
                 // Calling gameOver function after 5 moves
                 if (move == 5) {
-                    gameOver(playerOptions, movesLeft);
+                    gameOver(playerOptions, roundLeft);
                 }
             })
 
@@ -52,14 +52,14 @@ const game = () => {
 
 
 
-    // Function to decide winner
-    const winner = (player, computer) => {
+    // Function to get a winner
+    const getWinner = (player, computer) => {
         const result = document.querySelector('.result');
         const playerScoreBoard = document.querySelector('.p-count');
         const computerScoreBoard = document.querySelector('.c-count');
         player = player.toLowerCase();
         computer = computer.toLowerCase();
-        if (player === computer) {
+        if (player == computer) {
             result.textContent = 'Tie'
         }
         else if (player == 'rock') {
@@ -71,18 +71,20 @@ const game = () => {
 
             } else {
                 result.textContent = 'Player Won'
-            
+
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'scissors') {
-            if (computer == 'rock') {
+        else if (player === 'scissors') {
+            if (computer === 'rock') {
                 result.textContent = 'Computer Won';
+
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             } else {
                 result.textContent = 'Player Won';
+
                 playerScore++;
                 playerScoreBoard.textContent = playerScore;
             }
@@ -90,6 +92,7 @@ const game = () => {
         else if (player == 'paper') {
             if (computer == 'scissors') {
                 result.textContent = 'Computer Won';
+
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
             } else {
@@ -104,7 +107,7 @@ const game = () => {
 
     // Function to run when game is over
 
-    const gameOver = (playerOptions, movesLeft) => {
+    const gameOver = (playerOptions, roundLeft) => {
 
 
         const chooseMove = document.querySelector('.move');
@@ -117,12 +120,12 @@ const game = () => {
 
 
         chooseMove.innerText = 'Game Over!!'
-        movesLeft.style.display = 'none';
+        roundLeft.style.display = 'none';
 
         if (playerScore > computerScore) {
             result.style.fontSize = '2rem';
             result.innerText = 'You Won The Game'
-            result.style.color = '#308D46';
+            result.style.color = 'green';
         }
         else if (playerScore < computerScore) {
             result.style.fontSize = '2rem';
@@ -139,9 +142,7 @@ const game = () => {
         reloadBtn.style.display = 'flex';
         reloadBtn.addEventListener('click', () => {
 
-            console.log(reloadBtn);
             window.location.reload()
-
 
         })
 
