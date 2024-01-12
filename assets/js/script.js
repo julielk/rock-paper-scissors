@@ -135,7 +135,7 @@ const game = () => {
         else {
             result.style.fontSize = '2rem';
             result.innerText = 'Tie';
-            result.style.color = 'grey'
+            result.style.color = 'black'
         }
 
         reloadBtn.innerText = 'Restart';
