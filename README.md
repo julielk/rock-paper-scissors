@@ -3,7 +3,7 @@
 
 
 
-![responsive design](images/design.PNG)
+![responsive design](assets/images/design.PNG)
 
 
 
@@ -31,7 +31,7 @@ The rules of the Rock, Paper, Scissors game are quite simple:
 
 
 
-![rock-paper-scissors](images/image.png)
+![rock-paper-scissors](assets/images/image.png)
 
 
 
