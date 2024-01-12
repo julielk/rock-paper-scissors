@@ -3,7 +3,7 @@
 
 
 
-![responsive design](images/design.png)
+![responsive design](images/design.PNG)
 
 
 
