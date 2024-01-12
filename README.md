@@ -1,6 +1,15 @@
 # rock-paper-scissors
-Rock, Paper, Scissors is a classic hand game that is widely known and played by two players.
 
+
+
+
+![responsive design](images/design.png)
+
+
+
+
+
+Rock, Paper, Scissors is a classic hand game that is widely known and played by two players.
 
 The rules of the Rock, Paper, Scissors game are quite simple:
 
@@ -10,7 +19,7 @@ The rules of the Rock, Paper, Scissors game are quite simple:
 2. The game is determined by a simple set of rules: rock beats scissors, scissors beat
   paper, and paper beats rock.
  
-3. If both players choose the same option, the game is a tie.
+3. If both players choose the same option, the game is a **Tie**.
 
 4. A round of the game ends when one player wins or it’s a tie, then a new round starts.
 
@@ -18,10 +27,11 @@ The rules of the Rock, Paper, Scissors game are quite simple:
   a certain number of points
 
 6. The player who wins the most rounds or reaches the set number of points first, wins 
-  the game.
+   the game.
 
 
-![](assets/images/image.png)
+
+![rock-paper-scissors](images/image.png)
 
 
 
@@ -30,10 +40,10 @@ The rules of the Rock, Paper, Scissors game are quite simple:
 1. The main objects of the game  three buttons : left - rock, middle - paper, right - scissor
 2.  player choice vs. computer's choices.
 3. The outputs represented by: a text calling the winner, a text representing 
-   competitors choices, a text that numbers the winner, losses and ties throughout the game.
+   competitors choices, a text the numbers the winner, losses and ties throughout the game.
 4. Two features which add a bit of complexity to the game. The player **click** on a **addEventListener** choose 
    rock paper or scissors. The computer choice is  randomly chosen by the **computer** Math random number function 
-  using Math.floor.
+   using Math.floor.
 5. Then compared player choice with computer to find the winner  or Tie
 6. Th  game runs five time.
 7. When the **Game Over**  press **Restart** button which restart the game and reset score to zero.
@@ -41,13 +51,13 @@ The rules of the Rock, Paper, Scissors game are quite simple:
 
 
 **Testing**
-* I tested the game in  different browers chrome firefox and chrome
+* I tested the game in  different browers chrome firefox and chrome.
 * I confirm the the game is responsive on all standard devices using DevTools device toolbar
 
 **Bugs**
 
- I removed HTML entities and replaced with text in the  rock paper scissors buttons inorder for the if else 
- statement to work.
+ * I removed HTML entities and replaced with text in the  rock paper scissors buttons inorder for the if else 
+   statement to work.
 
 
 **Validation Testing**
@@ -56,7 +66,7 @@ The rules of the Rock, Paper, Scissors game are quite simple:
 * JS    -No error returned using the debugging DevToool device.
 
 **Unfixed Bugs**
-No unfixed bugs
+* No unfixed bugs
 
 **Deployent**
 * The site was deployed to Github pages. The steps as follows:
@@ -68,7 +78,8 @@ No unfixed bugs
 
 
 **media**
-.The image of UI taken using Snipping Tool,
+*The image of UI taken using Snipping Tool,
+* The responsive image from [Live link here](https://ui.dev/amiresponsive)
 
 
 
