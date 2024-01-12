@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background: lightgray;
+    background: rgb(11, 221, 193);
     color: black;
 
 }
@@ -57,12 +57,14 @@
 /*color of player score */
 .p-count {
     color: red;
+    font-size:2.5rem;
     font-weight: bold;
 }
 
 /* color of computer score */
 .c-count {
     color: darkblue;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -87,7 +89,7 @@
     font-size: 1rem;
     font-weight: bold;
     outline: none;
-    border-color: lightslategray;
+    border-color: lightslategrey;
     border: none;
     cursor: pointer;
 }
@@ -171,7 +173,7 @@
 
 @media screen and (max-width:414) {
     .title {
-        font-size: 1rem;
+        font-size:0.25rem;
     }
 
     .score {
