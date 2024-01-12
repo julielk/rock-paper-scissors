@@ -3,8 +3,8 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background: whitesmoke;
-    color: black;
+    background: lavender;
+     color: black;
 
 }
 
@@ -131,49 +131,66 @@
 
 
 
-/* Responsive Design */
+/* Responsive Design media queries */
 
-@media screen and (max-width:414) {
+@media screen and (max-width: 636px) {
     .title {
-        font-size: .5rem;
-    }
-
-    .score {
-        display: grid;
-        grid-template-columns: 1fr;
-
-    }
-
-    .p-count,
-    .c-count {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .rock,
-    .paper,
-    .scissor {
-        display: grid;
-        grid-template-rows: 1fr;
-    }
-
-}
-
-
-
-@media screen and (max-width: 612px) {
-    .title {
+        font-size: 2rem;
         text-align: center;
     }
 
     .score {
-        position: absolute;
-        top: 200px;
-        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(2fr);
+        text-align: center;
+
+    }
+
+    .move {
+        margin-top: 20px;
+        font-size: 1.5rem;
     }
 
     .options {
-        width: 100vw;
+
+        display: grid;
+        grid-template-columns: repeat(3fr);
+        margin-top: 1rem;
+        gap: 20px;
+        ;
+
+
+
     }
+}
+
+
+
+
+@media screen and (max-width:414) {
+    .title {
+        font-size: 1rem;
+    }
+
+    .score {
+        display: grid;
+        grid-template-columns: repeat(3fr);
+
+    }
+
+
+    .move {
+        margin-top: 10px;
+        font-size: 1rem;
+
+    }
+
+    .options {
+
+        display: grid;
+        grid-template-columns: repeat(3fr);
+        gap: 10px;
+    }
+
 
 }
